@@ -19,9 +19,10 @@ export class AppComponent {
 
   constructor(private bookService: BookService, private adapter: BookAdapter) {}
 
-  getBooks() {
+  getBooks(newSearch = false) {
     let searchQuery = (<HTMLInputElement>document.getElementById('searchQuery')).value;
     if(searchQuery.length) {
+      if(newSearch) this.startIndex = 0;
       this.books = Array();
       const booksObservable$ = this.bookService.getBooks(searchQuery, this.startIndex);
       booksObservable$.subscribe((booksObservable: Book[]) => {
@@ -34,7 +35,6 @@ export class AppComponent {
   }
 
   pageEvent(event: PageEvent) {
-    console.log("pagination b");
     this.startIndex = event.pageIndex*10;
     this.getBooks();
   }

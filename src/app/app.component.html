@@ -1,8 +1,8 @@
 <main>
-  <form (submit)="getBooks()" >
+  <form (submit)="getBooks(true)" >
     <label for="searchQuery">Search term: </label><input type="search" id="searchQuery" placeholder="Enter search term...">
     <button>Search</button>
   </form>
-  <app-book [books]="books"></app-book>
+  <app-book [books]="books" (pageEvent)="pageEvent($event)"></app-book>
 
 </main>

@@ -13,17 +13,14 @@ export class BookComponent {
   @Input() books: Book[] = new Array;
   @Output() pageEvent = new EventEmitter<PageEvent>();
 
-  totalResults = 2345;//needs actual value
+  totalResults = 1814;//needs actual value
   responseTime = 12;//needs actual value
 
   pageSize = 10;
   pageIndex = 0;
   showFirstLastButtons = true;
-  handlePageEvent(event: PageEvent) {
-    this.pageIndex = event.pageIndex;
 
+  handlePageEvent(event: PageEvent) {
     this.pageEvent.emit(event);
-  //   console.log(event.pageIndex);
-  //   //this.getBooks();
   }
 }
