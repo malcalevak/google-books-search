@@ -43,4 +43,7 @@
     & .mat-paginator-range-label {
         margin-left: 0 !important;
     }
+    & .mat-icon-button:focus {
+        outline: black auto 1px;
+    }
 }
