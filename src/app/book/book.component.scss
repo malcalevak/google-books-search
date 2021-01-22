@@ -1,0 +1,46 @@
+.book {
+    background-color: transparent;
+    border: thin solid transparent;
+    display: flex;
+    font-size: 110%;
+    font-weight: bold;
+    margin: 1em 0 0;
+    padding: 0 5px;
+    text-align: left;
+    &[aria-expanded="false"]::before {
+        content: '>';
+        padding-right: 0.35em;
+    }
+    &[aria-expanded="true"] {
+        &::before {
+            content: '⌄';
+            padding-right: 0.35em;
+        }
+        & + .description {
+            display: block;
+        }
+    }
+}
+
+.description {
+    background-color: #fffedb;
+    font-size: 110%;
+    margin: 0;
+    padding: 0.5em;
+    display: none;
+}
+
+.totalResults, .responseTime {
+    margin: 5px 0;
+}
+
+::ng-deep {
+    //Note: There's probably a better way to do this
+    & .mat-paginator-container {
+        justify-content: start !important;
+        padding-left: 0 !important;
+    }
+    & .mat-paginator-range-label {
+        margin-left: 0 !important;
+    }
+}

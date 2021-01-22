@@ -1,0 +1,25 @@
+<ng-container *ngFor="let book of books; index as i;" >
+    <section>
+        <button attr.aria-controls="book-{{i}}" attr.aria-expanded="{{book.expanded}}" id="book-button-{{i}}" class="book" (click)="book.expanded = !book.expanded">
+            {{ book.Authors }} - {{ book.Title }}
+        </button>
+        <p class="description" id="book-{{i}}">
+            {{ book.Description }}
+        </p>
+    </section>
+</ng-container>
+<mat-paginator
+    *ngIf="totalResults > 0"
+    (page)="handlePageEvent($event)"
+    [length]="totalResults"
+    [hidePageSize]=true
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [pageIndex]="pageIndex">
+</mat-paginator>
+<p *ngIf="totalResults > 0" class="totalResults">
+    Results: {{ totalResults }}
+</p>
+<p *ngIf="responseTime > 0" class="responseTime">
+    Response time: {{ responseTime }}ms
+</p>
