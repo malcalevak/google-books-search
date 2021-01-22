@@ -14,7 +14,7 @@ export class BookComponent {
   @Output() pageEvent = new EventEmitter<PageEvent>();
 
   totalResults = 2345;//needs actual value
-  responseTime = 0;//needs actual value
+  responseTime = 12;//needs actual value
 
   pageSize = 10;
   pageIndex = 0;
