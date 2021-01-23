@@ -9,9 +9,11 @@ export class HttpResponseTimeLogger implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return defer(() => {
       const key = req.urlWithParams;
-      console.time(key);
+      const startTime = new Date().getTime();
       return next.handle(req).pipe(finalize(() => {
-        console.timeEnd(key);
+        const endTime = new Date().getTime();
+        const responseTime = endTime - startTime;
+        console.log(responseTime);
       }));
     });
   }
