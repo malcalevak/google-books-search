@@ -16,7 +16,6 @@ export class AppComponent {
   booksObservable$: Observable<Book[]> = new Observable<Book[]>();
   startIndex = 0;
 
-
   constructor(private bookService: BookService, private adapter: BookAdapter) {}
 
   getBooks(newSearch = false) {
