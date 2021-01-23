@@ -40,8 +40,9 @@
         justify-content: start !important;
         padding-left: 0 !important;
     }
+    //We can't determine the total results, so we're faking it, and need to hide this
     & .mat-paginator-range-label {
-        margin-left: 0 !important;
+        display: none;
     }
     & .mat-icon-button:focus {
         outline: black auto 1px;

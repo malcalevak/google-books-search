@@ -9,17 +9,13 @@
     </section>
 </ng-container>
 <mat-paginator
-    *ngIf="totalResults > 0"
+    *ngIf="books.length > 0 || pageIndex > 0"
     (page)="handlePageEvent($event)"
     [length]="totalResults"
     [hidePageSize]=true
     [pageSize]="pageSize"
-    [showFirstLastButtons]="showFirstLastButtons"
     [pageIndex]="pageIndex">
 </mat-paginator>
-<p *ngIf="totalResults > 0" class="totalResults">
-    Results: {{ totalResults }}
-</p>
 <p *ngIf="responseTime > 0" class="responseTime">
     Response time: {{ responseTime }}ms
 </p>
