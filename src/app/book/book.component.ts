@@ -13,7 +13,7 @@ export class BookComponent {
   @Input() books: Book[] = new Array;
   @Output() pageEvent = new EventEmitter<PageEvent>();
 
-  responseTime = 12;//needs actual value
+  responseTime = 0;//needs actual value
 
   pageSize = 10;
   pageIndex = 0;

@@ -8,7 +8,6 @@
         </p>
     </section>
 </ng-container>
-{{books.length}}
 <mat-paginator
     *ngIf="books.length > 0 || pageIndex > 0"
     (page)="handlePageEvent($event)"
