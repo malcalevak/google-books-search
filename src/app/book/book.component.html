@@ -8,10 +8,11 @@
         </p>
     </section>
 </ng-container>
+{{books.length}}
 <mat-paginator
     *ngIf="books.length > 0 || pageIndex > 0"
     (page)="handlePageEvent($event)"
-    [length]="totalResults"
+    [length]="pageIndex*10 + books.length + 1"
     [hidePageSize]=true
     [pageSize]="pageSize"
     [pageIndex]="pageIndex">

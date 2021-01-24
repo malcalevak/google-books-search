@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PageEvent } from '@angular/material/paginator';
 import { BookService } from './book.service';
-import { Book,BookAdapter } from './book.model';
+import { Book, BookAdapter } from './book.model';
 
 @Component({
   selector: 'app-root',
